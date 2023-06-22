@@ -4,7 +4,8 @@
   "info": {
     "singularName": "post",
     "pluralName": "posts",
-    "displayName": "Новости"
+    "displayName": "Новости",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -20,10 +21,6 @@
       "required": true,
       "maxLength": 500
     },
-    "text": {
-      "type": "richtext",
-      "required": true
-    },
     "date": {
       "type": "datetime"
     },
@@ -37,6 +34,23 @@
       "relation": "manyToMany",
       "target": "api::category.category",
       "mappedBy": "novostis"
+    },
+    "text": {
+      "type": "customField",
+      "options": {
+        "preset": "blockBaloon"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "preview": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
