@@ -24,7 +24,7 @@
     "date": {
       "type": "datetime"
     },
-    "admin_user": {
+    "author": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "admin::user"
@@ -43,14 +43,15 @@
       "customField": "plugin::ckeditor5.CKEditor"
     },
     "preview": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }
